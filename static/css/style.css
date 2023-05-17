@@ -1,0 +1,173 @@
+:root{
+    --black:#333;
+    --border:.1rem solid rgba(0,0,0,.2);
+    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+    --seconde-color: rgb(0, 0, 0);
+}
+
+*{
+    margin:0; 
+    padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    font-weight: lighter;
+    transition: 0.5s;
+    font-size: 1.7rem;
+    font-family: poppins, sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header{
+    position: fixed;
+    background-attachment: fixed;
+    top:0; 
+    left:0;
+    z-index: 1000;
+    height:100%;
+    width:25rem;
+    background:#1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    text-align: center;
+}
+
+.header .user img{
+    height:17rem;
+    width:17rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border:.7rem solid var(--yellow);
+}
+
+.header .user .name{
+    font-size: 3.5rem;
+    color:#fff;
+}
+
+.header .user .post{
+    font-size: 2rem;
+    color:#eee;
+}
+
+.header .navbar{
+    width:100%;
+}
+
+.header .navbar ul{
+    list-style: none;
+    padding:1rem 3rem;
+}
+
+
+.header .navbar ul li a{
+    display: block;
+    width: 100%;
+    padding:1rem;
+    margin:1.5rem 0;
+    background:#333;
+    color:#fff;
+    font-size: 2rem;
+    border-radius: 5rem;
+}
+
+.header .navbar ul li a:hover{
+    background:var(--yellow);
+}
+
+.section{
+    margin: 0;
+    padding: 10px;
+}
+
+h1{
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 25px;
+}
+
+.formulaire{
+    padding: 10px;
+    margin: 10px auto;
+    text-align: center;
+    width: 400px;
+}
+
+input{
+    border: 2px solid #333;
+    padding: 10px;
+    margin: 5px;
+    width: 90%;
+    border-radius: 10px;
+}
+
+
+input[type="submit"]{
+    margin-top: 20px;
+}
+
+input[type="submit"]:hover{
+    background-color: black;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.formulaire a{
+    text-align: right;
+}
+
+
+
+
+/* media queries  */
+
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+
+    .header{
+        padding:1.5rem;
+    }
+
+    section{
+        padding:2rem;
+    }    
+
+    .container{
+        grid-template-columns: 2fr 1fr;
+    }
+
+}
+
+@media (max-width:768px){
+
+    #menu-bars{
+        display: inline-block;
+    }
+
+}
+
+@media (max-width:450px){
+
+    html{
+        font-size: 50%;
+    }
+}

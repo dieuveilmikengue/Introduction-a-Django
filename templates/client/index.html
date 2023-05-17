@@ -1,0 +1,39 @@
+{% extends "main.html" %}
+
+{% block contenu %}
+
+<div class="section">
+       <h2>Client</h2>
+       <div class="card">
+         <h4>Informations</h4>
+         <p>Nom: {{client.nom}} </p>
+         <p>Téléphone: {{client.telephone}} </p>
+       </div>
+       <div class="card">
+         <a href="" class="btn">Les dernieres commandes</a>
+         <table>
+           <tr>
+             <th>Produit</th>
+             <th>Date de la commande</th>
+             <th>Statut</th>
+             <th>Mise à jour</th>
+             <th>Supprimer</th>
+           </tr>
+           {% for commande in commande %}
+           <tr>
+             <th>{{commande.produit}}</th>
+             <th>{{commande.date_creation}}</th>
+             <th>{{commande.statuts}}</th>
+             <th><a href="">Modifié</a></th>
+             <th><a href="">Supprimer</a></th>
+             {% endfor %}
+           </tr>
+         </table>
+       </div>
+       <div class="card">
+         <h4>Commande totale</h4>
+         <p> {{commande_total}} </p>
+       </div>
+</div>
+
+{% endblock %}

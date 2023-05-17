@@ -1,0 +1,53 @@
+{% extends "main.html" %}
+
+{% block contenu %}
+
+<div class="section">
+    <h2>Clients</h2>
+    <div class="card">
+      <a href="" class="btn">Creer un client</a>
+      <table>
+        <tr>
+          <th>N°</th>
+          <th>Clients</th>
+          <th>Téléphone</th>
+          <th>Détails</th>
+        </tr>
+        <tr>
+          {% for client in clients %}
+          <th><a href="{% url 'client' client.id %}">{{client.id}}</a></th>
+          <th>{{client.nom}}</th>
+          <th>{{client.telephone}}</th>
+          <th><a href="{% url 'client' client.id %}">Détails</a></th>
+          {% endfor %}
+        </tr>
+
+
+      </table>
+    </div>
+    <div class="card">
+      <a href="" class="btn">Les dernieres commandes</a>
+      <table>
+        <tr>
+          <th>Produit</th>
+          <th>Client</th>
+          <th>Date de la commande</th>
+          <th>Statut</th>
+          <th>Mise à jour</th>
+          <th>Supprimer</th>
+        </tr>
+        <tr>
+          {% for commande in commandes %}
+          <th>{{commande.produit}}</th>
+          <th>{{commande.client}}</th>
+          <th>{{commande.date_creation}}</th>
+          <th>{{commande.statuts}}</th>
+          <th><a href="">Mise à jour</a></th>
+          <th><a href="">Supprimer</a></th>
+          {% endfor %}
+        </tr>
+      </table>
+    </div>
+</div>
+
+{% endblock %}
