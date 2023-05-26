@@ -234,7 +234,7 @@ py manage.py createsuperuser
 ...............adress mail
 ...............mot de passe
 
-pour se connecter à al base, vous utilisez l'url: 
+pour se connecter à la base, vous utilisez l'url: 
 localhost/admin
 
 ## VII- Les relations entre les bases de données
@@ -243,28 +243,32 @@ localhost/admin
 Un client peut commander plusieurs produits et faire plusieurs commandes 
 Un produit peut se retrouver dans plusieurs commande
 
-    a- On recupère notre model commande:
-        - On importe les models Client et Poduit
-            from client.models import Client
-            from produit.models import Produit
+a- On recupère notre model commande:
+On importe les models Client et Poduit:
 
-        - On ajoute les champs client et produit:
-            client = models.ForeignKey(Client, null=True, on_delete=models.SET_NULL)
-            produit = models.ForeignKey(Produit, null=True, on_delete=models.SET_NULL)
+    from client.models import Client
+    from produit.models import Produit
+
+On ajoute les champs client et produit:
+
+    client = models.ForeignKey(Client, null=True, on_delete=models.SET_NULL)
+    produit = models.ForeignKey(Produit, null=True, on_delete=models.SET_NULL)
 
 2- Many to many
 Un produit peut avoir plusieurs tag
 
 a- On recupère notre models Produit
-        -On crée une class Tag pour ajouter des tag:
-            class Tag(models.Model):
-                nom = models.CharField(max_length=50, null=True)
+On crée une class Tag pour ajouter des tag:
 
-                # Une fonction qui retourne le nom dans la base de donnée
-                def __str__(self):
-                    return self.nom
+    class Tag(models.Model):
+        nom = models.CharField(max_length=50, null=True)
+
+        # Une fonction qui retourne le nom dans la base de donnée
+        def __str__(self):
+            return self.nom
     
 b- On importe le tag dans notre admin.py du Produit:
+
         from django.contrib import admin
         from .models import Produit
         from .models import Tag
@@ -276,4 +280,11 @@ b- On importe le tag dans notre admin.py du Produit:
 
 
 ## VIII- Afficher les donnees dans le site
+
+
+
+## IX- Implementation des Fonctionnalité CRUD
+
+
+
 

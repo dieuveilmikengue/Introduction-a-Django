@@ -13,20 +13,20 @@
           <th>Téléphone</th>
           <th>Détails</th>
         </tr>
+        {% for client in clients %}
         <tr>
-          {% for client in clients %}
           <th><a href="{% url 'client' client.id %}">{{client.id}}</a></th>
           <th>{{client.nom}}</th>
           <th>{{client.telephone}}</th>
           <th><a href="{% url 'client' client.id %}">Détails</a></th>
-          {% endfor %}
         </tr>
+        {% endfor %}
 
 
       </table>
     </div>
     <div class="card">
-      <a href="" class="btn">Les dernieres commandes</a>
+      <a href="{% url 'ajout_commande' %}" class="btn">Ajouter commande</a>
       <table>
         <tr>
           <th>Produit</th>
@@ -36,16 +36,16 @@
           <th>Mise à jour</th>
           <th>Supprimer</th>
         </tr>
+        {% for commande in commandes %}
         <tr>
-          {% for commande in commandes %}
           <th>{{commande.produit}}</th>
           <th>{{commande.client}}</th>
           <th>{{commande.date_creation}}</th>
           <th>{{commande.statuts}}</th>
-          <th><a href="">Mise à jour</a></th>
-          <th><a href="">Supprimer</a></th>
-          {% endfor %}
+          <th><a href="{% url 'modifier_commande' commande.id %}">Modifier</a></th>
+          <th><a href="{% url 'supprimer_commande' commande.id %}">Supprimer</a></th>
         </tr>
+        {% endfor %}
       </table>
     </div>
 </div>
