@@ -3,7 +3,12 @@
 {% block contenu %}
 
 <div class="section">
-       <h2>Client</h2>
+      <h2>Client</h2>
+       
+      <form action="" method="get">
+        <button type="submit">Search</button>
+        {{myfilter.form}}
+      </form>
        <div class="card">
          <h4>Informations</h4>
          <p>Nom: {{client.nom}} </p>
