@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "produit",
     "client",
     "commande",
+    "compte",
     "django_filters",
 ]
 

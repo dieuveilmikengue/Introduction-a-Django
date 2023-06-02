@@ -1,0 +1,10 @@
+<h1>Inscription</h1>
+
+<form action="" method="post">
+    {% for champ in form %}
+    {{champ.label}}: {{champ}} <br>
+    {% endfor %}
+    <br>
+    <button type="submit" name="inscription">Inscription</button>
+
+</form>
